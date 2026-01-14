@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabio Tempera - Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio professionale di Fabio Tempera - Ingegnere Informatico, Fotografo e Astrofotografo. Esplora progetti, competenze e gallerie fotografiche.">
+    <meta name="keywords"
+        content="Fabio Tempera, Ingegnere Informatico, Fotografo, Astrofotografia, Portfolio, Web Developer, Full Stack, C++, Python">
+    <meta name="author" content="Fabio Tempera">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fabio Tempera - Portfolio">
+    <meta property="og:description"
+        content="Scopri il mondo di Fabio Tempera: Ingegnere Informatico, Fotografo e Astrofotografo.">
+    <meta property="og:image" content="https://ft2801.github.io/Portfolio/assets/img/Logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fabio Tempera - Portfolio">
+    <meta name="twitter:description"
+        content="Ingegnere Informatico, Fotografo e Astrofotografo. Esplora progetti e competenze.">
+    <meta name="twitter:image" content="https://ft2801.github.io/Portfolio/assets/img/Logo.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Fabio Tempera",
+      "url": "https://ft2801.github.io/Portfolio/",
+      "image": "https://ft2801.github.io/Portfolio/assets/img/Logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/fabio-tempera-4a413b3a0/",
+        "https://github.com/Ft2801"
+      ],
+      "jobTitle": "Ingegnere Informatico",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "description": "Ingegnere Informatico con passione per la fotografia e l'astrofotografia."
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/Logo.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="canonical" href="https://ft2801.github.io/Portfolio/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css?v=2.0">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-circle"></div>
+            <span class="preloader-text">FT</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-text">FT</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">Chi Sono</a></li>
+                <li class="nav-item"><a href="#informatica" class="nav-link">Informatica</a></li>
+                <li class="nav-item"><a href="#fotografia" class="nav-link">Fotografia</a></li>
+                <li class="nav-item"><a href="#astrofotografia" class="nav-link">Astrofotografia</a></li>
+                <li class="nav-item"><a href="#progetti" class="nav-link">Progetti</a></li>
+                <li class="nav-item"><a href="#contatti" class="nav-link">Contatti</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Hero -->
+    <header class="hero-main" id="home">
+        <div class="hero-bg-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge reveal">Benvenuto nel mio portfolio</div>
+            <h1 class="hero-title reveal">
+                <span class="hero-greeting">Ciao, sono</span>
+                <span class="hero-name">Fabio Tempera</span>
+            </h1>
+            <p class="hero-subtitle reveal">
+                <span class="typewriter" id="typewriter"></span>
+            </p>
+            <div class="hero-cta reveal">
+                <a href="#about" class="btn btn-primary">
+                    <span>Scopri di più</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="#contatti" class="btn btn-outline">
+                    <span>Contattami</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Chi Sono</span>
+                <h2 class="section-title">Profilo Professionale</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p class="about-intro">
+                        <strong>Ingegnere informatico</strong> con una solida formazione accademica in ingegneria
+                        elettronica.
+                        Il percorso di studi ha permesso l'acquisizione di competenze tecniche trasversali e di un
+                        metodo di
+                        analisi strutturato, orientato alla risoluzione di problematiche complesse.
+                    </p>
+                    <p>
+                        Durante la formazione ho maturato esperienza nella gestione di progetti software e nell'analisi
+                        dei dati, sviluppando una propensione all'organizzazione efficiente delle risorse. L'obiettivo
+                        professionale è l'applicazione delle conoscenze informatiche in contesti aziendali strutturati,
+                        contribuendo allo sviluppo di soluzioni efficienti e scalabili.
+                    </p>
+                </div>
+                <div class="about-info reveal">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Località</span>
+                            <span class="info-value">Pescara (PE)</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Data di Nascita</span>
+                            <span class="info-value">2 Agosto 2001</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Formazione</span>
+                            <span class="info-value">Laurea Magistrale in corso</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Università</span>
+                            <span class="info-value">UNIVPM - Ancona</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Timeline -->
+            <div class="education-section reveal">
+                <h3 class="subsection-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Percorso di Studi
+                </h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">09/2024 - Presente</span>
+                            <h4>Laurea Magistrale in Ingegneria Informatica</h4>
+                            <p>Università Politecnica delle Marche (UNIVPM), Ancona</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">09/2020 - 09/2024</span>
+                            <h4>Laurea Triennale in Ingegneria Elettronica</h4>
+                            <p>Università Politecnica delle Marche (UNIVPM), Ancona</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2019/2020</span>
+                            <h4>Diploma di Scuola Secondaria Superiore</h4>
+                            <p>Liceo Scientifico "G. Galilei", Pescara</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section 1: Informatica -->
+    <section class="hero-showcase" id="informatica">
+        <div class="hero-showcase-bg" style="background-image: url('assets/img/Informatica.jpg');"></div>
+        <div class="hero-showcase-overlay"></div>
+        <div class="hero-showcase-content">
+            <div class="showcase-icon reveal">
+                <i class="fas fa-code"></i>
+            </div>
+            <h2 class="showcase-title reveal">Ingegnere Informatico</h2>
+            <p class="showcase-subtitle reveal">Sviluppo Software • AI & Machine Learning • Blockchain</p>
+            <div class="showcase-stats reveal">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="6">0</span>
+                    <span class="stat-label">Linguaggi</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="8">0</span>
+                    <span class="stat-label">Progetti</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="4">0</span>
+                    <span class="stat-label">Anni Exp</span>
+                </div>
+            </div>
+            <a href="#skills-tech" class="btn btn-glass reveal">
+                <span>Scopri le competenze</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section class="section skills-section" id="skills-tech">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Competenze Tecniche</span>
+                <h2 class="section-title">Stack Tecnologico</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Linguaggi di Programmazione</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Solidity</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Framework & Tecnologie</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Web3.py</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Rasa</span>
+                        <span class="skill-tag">REST API</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Software & Strumenti</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">SPICE</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Metasploit</span>
+                        <span class="skill-tag">Nmap</span>
+                        <span class="skill-tag">Jupyter</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Business Intelligence</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Qlik Sense</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Microsoft Office</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section 2: Fotografia -->
+    <section class="hero-showcase" id="fotografia">
+        <div class="hero-showcase-bg" style="background-image: url('assets/img/Fotografia.jpg');"></div>
+        <div class="hero-showcase-overlay"></div>
+        <div class="hero-showcase-content">
+            <div class="showcase-icon reveal">
+                <i class="fas fa-camera"></i>
+            </div>
+            <h2 class="showcase-title reveal">Fotografo Professionista</h2>
+            <p class="showcase-subtitle reveal">Ritratti • Paesaggi • Eventi • Naturalistica</p>
+            <div class="showcase-stats reveal">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="5">0</span>
+                    <span class="stat-label">Anni Exp</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="100">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Eventi</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-label">Studi</span>
+                </div>
+            </div>
+            <a href="#skills-photo" class="btn btn-glass reveal">
+                <span>Scopri le competenze</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Photography Skills Section -->
+    <section class="section skills-section" id="skills-photo">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Competenze Fotografiche</span>
+                <h2 class="section-title">Arte & Tecnica Visiva</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-camera-retro"></i>
+                        <h3>Attrezzatura</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">DSLR</span>
+                        <span class="skill-tag">Mirrorless</span>
+                        <span class="skill-tag">Obiettivi</span>
+                        <span class="skill-tag">Illuminazione Studio</span>
+                        <span class="skill-tag">Flash</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-palette"></i>
+                        <h3>Software di Editing</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Adobe Photoshop</span>
+                        <span class="skill-tag">Adobe Lightroom</span>
+                        <span class="skill-tag">Adobe Premiere Pro</span>
+                        <span class="skill-tag">Adobe After Effects</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-images"></i>
+                        <h3>Specializzazioni</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Ritrattistica</span>
+                        <span class="skill-tag">Paesaggistica</span>
+                        <span class="skill-tag">Naturalistica</span>
+                        <span class="skill-tag">Sportiva</span>
+                        <span class="skill-tag">Eventi</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-video"></i>
+                        <h3>Videomaking</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Riprese Video</span>
+                        <span class="skill-tag">Montaggio</span>
+                        <span class="skill-tag">Color Grading</span>
+                        <span class="skill-tag">Motion Graphics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section 3: Astrofotografia -->
+    <section class="hero-showcase" id="astrofotografia">
+        <div class="hero-showcase-bg" style="background-image: url('assets/img/Astrofotografia.jpg');"></div>
+        <div class="hero-showcase-overlay"></div>
+        <div class="hero-showcase-content">
+            <div class="showcase-icon reveal">
+                <i class="fas fa-star"></i>
+            </div>
+            <h2 class="showcase-title reveal">Astrofotografo</h2>
+            <p class="showcase-subtitle reveal">Deep Sky • Pianeti • Via Lattea • Sviluppo Software</p>
+            <div class="showcase-stats reveal">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="1">0</span>
+                    <span class="stat-label">Software OSS</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Soggetti</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="100">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Ore Osservazione</span>
+                </div>
+            </div>
+            <a href="#skills-astro" class="btn btn-glass reveal">
+                <span>Scopri le competenze</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Astrophotography Skills Section -->
+    <section class="section skills-section" id="skills-astro">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Competenze Astrofotografiche</span>
+                <h2 class="section-title">Catturare l'Universo</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-satellite-dish"></i>
+                        <h3>Strumentazione</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Telescopi</span>
+                        <span class="skill-tag">Montature Equatoriali</span>
+                        <span class="skill-tag">Camere CCD/CMOS</span>
+                        <span class="skill-tag">Filtri Narrowband</span>
+                        <span class="skill-tag">Guida Automatica</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Software Specializzato</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Siril</span>
+                        <span class="skill-tag">PixInsight</span>
+                        <span class="skill-tag">Tstar</span>
+                        <span class="skill-tag">Adobe Photoshop</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>Sviluppo Open Source</h3>
+                    </div>
+                    <p class="skill-description">
+                        Contributore attivo a software open source per l'elaborazione di immagini astronomiche.
+                        Sviluppo di nuovi moduli e ottimizzazione algoritmi in C++.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="progetti">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Progetti Principali</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card reveal">
+                    <div class="project-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="project-title">Blockchain Agroalimentare</h3>
+                    <p class="project-description">
+                        Applicazione decentralizzata per la tracciabilità della filiera produttiva,
+                        dal coltivatore al rivenditore finale con gestione token e CO2.
+                    </p>
+                    <div class="project-tags">
+                        <span>Solidity</span>
+                        <span>Web3.py</span>
+                        <span>Python</span>
+                        <span>MetaMask</span>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card reveal">
+                    <div class="project-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="project-title">Backend Mercato Energetico</h3>
+                    <p class="project-description">
+                        Architettura backend per simulazione e gestione richieste energetiche
+                        con API RESTful e containerizzazione Docker.
+                    </p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>TypeScript</span>
+                        <span>Docker</span>
+                        <span>REST API</span>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card reveal">
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="project-title">Data Science & AI Portfolio</h3>
+                    <p class="project-description">
+                        Suite di cinque progetti: NLP chatbot, deep learning per serie temporali,
+                        clustering e classificazione con machine learning classico.
+                    </p>
+                    <div class="project-tags">
+                        <span>PyTorch</span>
+                        <span>Rasa</span>
+                        <span>Scikit-learn</span>
+                        <span>Spacy</span>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card reveal">
+                    <div class="project-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="project-title">Penetration Testing</h3>
+                    <p class="project-description">
+                        Ethical Hacking completo su sistema Ubuntu: information gathering,
+                        vulnerability scanning, exploitation e privilege escalation.
+                    </p>
+                    <div class="project-tags">
+                        <span>Kali Linux</span>
+                        <span>Metasploit</span>
+                        <span>Nmap</span>
+                        <span>Burp Suite</span>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card reveal">
+                    <div class="project-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="project-title">Software Astrofotografia OSS</h3>
+                    <p class="project-description">
+                        Sviluppo di un software open source C++ per editing e elaborazione
+                        avanzata di immagini astronomiche. Sviluppo moduli e ottimizzazione.
+                    </p>
+                    <div class="project-tags">
+                        <span>C++</span>
+                        <span>Python</span>
+                        <span>Image Processing</span>
+                        <span>Git</span>
+                    </div>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="project-card reveal">
+                    <div class="project-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3 class="project-title">App Scacchi con AI</h3>
+                    <p class="project-description">
+                        Videogioco scacchi completo con modalità PvP e PvE,
+                        revisione partita e analisi mosse in tempo reale con Stockfish.
+                    </p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Stockfish</span>
+                        <span>GUI</span>
+                        <span>AI</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience-section" id="esperienza">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Carriera</span>
+                <h2 class="section-title">Esperienza Professionale</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="experience-timeline">
+                <div class="experience-item reveal">
+                    <div class="experience-date">
+                        <span>04/2024</span>
+                        <span class="date-separator">-</span>
+                        <span>Presente</span>
+                    </div>
+                    <div class="experience-content">
+                        <h3>Volontario Protezione Civile</h3>
+                        <span class="experience-company">Volontari Senza Frontiere, Pescara</span>
+                        <p>Volontario operativo nell'ambito delle attività di Protezione Civile gestite
+                            dall'associazione.</p>
+                    </div>
+                </div>
+                <div class="experience-item reveal">
+                    <div class="experience-date">
+                        <span>06/2018</span>
+                        <span class="date-separator">-</span>
+                        <span>04/2023</span>
+                    </div>
+                    <div class="experience-content">
+                        <h3>Collaboratore Tecnico e Audiovisivo</h3>
+                        <span class="experience-company">MediaMuseum, Pescara</span>
+                        <p>Fotografo e videomaker per eventi. Assistente tecnico e supervisione durante conferenze.</p>
+                    </div>
+                </div>
+                <div class="experience-item reveal">
+                    <div class="experience-date">
+                        <span>2022</span>
+                        <span class="date-separator">-</span>
+                        <span>2023</span>
+                    </div>
+                    <div class="experience-content">
+                        <h3>Secondo Fotografo</h3>
+                        <span class="experience-company">Foto Studio 2.8 & Visual Photo, Pescara</span>
+                        <p>Gestione autonoma servizi fotografici per eventi privati e aziendali. Relazione con il
+                            cliente, pianificazione shooting e consegna prodotto post-prodotto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages & Soft Skills -->
+    <section class="section soft-skills-section" id="soft-skills">
+        <div class="container">
+            <div class="soft-skills-grid">
+                <div class="soft-skill-card reveal">
+                    <div class="section-header">
+                        <span class="section-tag">Comunicazione</span>
+                        <h2 class="section-title">Lingue</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="languages-list">
+                        <div class="language-item">
+                            <div class="language-info">
+                                <span class="language-name">Italiano</span>
+                                <span class="language-level">Madrelingua</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" style="--progress: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-info">
+                                <span class="language-name">Inglese</span>
+                                <span class="language-level">C1/B2 - Avanzato</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-info">
+                                <span class="language-name">Francese</span>
+                                <span class="language-level">A1/A2 - Base</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" style="--progress: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="soft-skill-card reveal">
+                    <div class="section-header">
+                        <span class="section-tag">Trasversali</span>
+                        <h2 class="section-title">Soft Skills</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="soft-skills-list">
+                        <div class="soft-skill-item">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>Problem Solving</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-users"></i>
+                            <span>Team Working</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Time Management</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analisi Tecnica</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-tasks"></i>
+                            <span>Project Management</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Autonomia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contatti">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Contattami</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <p class="contact-intro reveal">
+                    Sei interessato a collaborare o vuoi saperne di più sui miei progetti?
+                    Non esitare a contattarmi attraverso uno dei canali seguenti.
+                </p>
+                <div class="contact-cards">
+                    <a href="mailto:fabiot2801@gmail.com" class="contact-card reveal">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">fabiot2801@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fabio-tempera-4a413b3a0/" target="_blank" rel="noopener"
+                        class="contact-card reveal">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">fabio-tempera</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">FT</span>
+                    <span class="footer-name">Fabio Tempera</span>
+                </div>
+                <div class="footer-social">
+                    <a href="mailto:fabiot2801@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fabio-tempera-4a413b3a0/" target="_blank" rel="noopener"
+                        class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Fabio Tempera. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Torna su">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js?v=2.0"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fabio Tempera",
+        "url": "https://ft2801.github.io/Portfolio/",
+        "image": "https://ft2801.github.io/Portfolio/assets/img/Logo.png",
+        "jobTitle": ["Ingegnere Informatico", "Fotografo", "Astrofotografo"],
+        "sameAs": [
+            "https://github.com/fabiotempera",
+            "https://linkedin.com/in/fabiotempera",
+            "https://instagram.com/fabiotempera"
+        ],
+        "knowsAbout": ["Computer Engineering", "Photography", "Astrophotography", "Software Development", "C++", "Python", "Web Development"]
+    }
+    </script>
+</body>
+
+</html>
