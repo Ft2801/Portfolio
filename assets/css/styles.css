@@ -438,6 +438,40 @@ button {
 }
 
 
+
+/* === Hero Social === */
+.hero-social {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+}
+
+.hero-social-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0.6rem 1.2rem;
+    background: var(--color-bg-glass);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    transition: var(--transition-smooth);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.hero-social-link i {
+    font-size: 1.25rem;
+}
+
+.hero-social-link:hover {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    transform: translateY(-3px) scale(1.05);
+    color: white;
+    box-shadow: var(--shadow-glow);
+}
+
 /* === Section Styles === */
 .section {
     padding: var(--spacing-3xl) 0;
