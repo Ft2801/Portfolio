@@ -628,7 +628,7 @@ button {
 }
 
 .stat-number {
-    display: block;
+    display: inline-block;
     font-size: 3rem;
     font-weight: 800;
     color: var(--color-primary-light);
@@ -641,10 +641,12 @@ button {
 }
 
 .stat-label {
+    display: block;
     font-size: 0.9rem;
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    margin-top: 0.5rem;
 }
 
 /* === About Section === */
