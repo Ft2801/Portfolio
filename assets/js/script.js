@@ -212,8 +212,37 @@ function initBackToTop() {
 }
 
 
-/* === Smooth Scroll === */
+/* === Smooth Scroll with Lenis === */
+let lenis;
+
 function initSmoothScroll() {
+    // Check if Lenis is loaded
+    if (typeof Lenis === 'undefined') {
+        console.warn('Lenis not loaded. Falling back to native smooth scrolling.');
+        document.documentElement.style.scrollBehavior = 'smooth';
+        return;
+    }
+
+    // Initialize Lenis
+    lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+    });
+
+    // Integrated Request Animation Frame
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
     // Select all links with hashes
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -223,32 +252,12 @@ function initSmoothScroll() {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                const startPosition = window.pageYOffset;
-                const distance = offsetPosition - startPosition;
-                const duration = 1000; // Duration in ms
-                let start = null;
-
-                window.requestAnimationFrame(step);
-
-                function step(timestamp) {
-                    if (!start) start = timestamp;
-                    const progress = timestamp - start;
-                    const percentage = Math.min(progress / duration, 1);
-
-                    // Ease-in-out cubic function
-                    const ease = percentage < 0.5
-                        ? 4 * percentage * percentage * percentage
-                        : 1 - Math.pow(-2 * percentage + 2, 3) / 2;
-
-                    window.scrollTo(0, startPosition + distance * ease);
-
-                    if (progress < duration) {
-                        window.requestAnimationFrame(step);
-                    }
-                }
+                // Use Lenis for scrolling
+                lenis.scrollTo(targetElement, {
+                    offset: -80, // Adjust for fixed header
+                    duration: 1.5,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
 
                 // Close mobile menu if open
                 const navToggle = document.getElementById('nav-toggle');
